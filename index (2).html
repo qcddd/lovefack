@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JSON Output</title>
+    <script>
+        // 从URL中获取参数并生成JSON
+        function getUrlParamsAsJson() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const data = {
+                type: urlParams.get('type') || '',
+                code: urlParams.get('code') || ''
+            };
+            return JSON.stringify(data, null, 2);
+        }
+
+        // 设置响应头并输出JSON
+        document.write(getUrlParamsAsJson());
+    </script>
+</head>
+<body></body>
+</html>
